@@ -4,89 +4,109 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', Arial, sans-serif;
 }
+:root{
+    --cor-fundo:rgba(0,0,0,0.689);
+    --cor-texto:#ffffff;
+    --cor-botao-primario: #7f58af;
+    --cor-botao-secundario: #6c757d;
+    --sombra-caixa:rgba(60,30,90,0.12);
+    
+}
+
 
 body {
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTalIWk0odZJFUQcsQ-kyPYBAF9gbHMZdzfcg&s");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-h1 {
-    font-size: 2.5em;
-    color: white;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-    font-weight: 700;
-}
-
-section {
-    background: rgba(0, 0, 0, 0.689);
-    border-radius: 18px;
+main{
+    background: var(--cor-fundo);
+    display: flex;
+    flex-direction: column;
+    padding: 32px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--sombra-caixa);
+    gap: 20px;
     width: 95%;
     max-width: 500px;
     height: auto;
-    min-height: 400px;
-    box-shadow: 0 8px 32px 0 rgba(60, 30, 90, 0.2);
-    margin: 60px auto 0 auto;
-    padding: 32px 24px 24px 24px;
+    align-items: center;
+}
+
+h1{
+    color : var(--cor-texto);
+    font-size: 2em;
+    gap: 10px;
+    flex-direction: column;
+    text-align: left;
+}
+
+.gerador label{
+    color: var(--cor-texto);
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.gerador input{
+    border-radius: 10px;
+    padding: 8px 12px;
     text-align: center;
+    width: 80px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--cor-texto);
+}
+
+.senha-box{
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: box-shadow 0.3s;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 8px;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+    justify-content: space-between;
 }
 
-section:hover {
-    box-shadow: 0 12px 40px 0 rgba(60, 30, 90, 0.28);
+#senhagerada{
+    color: var(--cor-texto);
+    font-size: 1.2em;
+    word-break: break-all;
+    padding: 0 10px;
+    text-align: left;
+    flex-grow: 1;
 }
 
-button {
-    background: linear-gradient(90deg, #0ff 0%, #5f4b8b 100%);
-    color: #fff;
-    width: 300px;
-    margin-top: 32px;
-    border-radius: 12px;
-    padding: 12px 0;
-    box-shadow: 0 2px 8px rgba(60, 30, 90, 0.12);
-    border: none;
-    font-size: 1.1em;
-    font-weight: 600;
+button{
+    background-color: var(--cor-botao-primario);
+    font-size: 1.2em;
+    width: 100%;
     cursor: pointer;
-    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 8px var(--sombra-caixa);
+    font-weight: 600;
+    padding: 12px 0;
     outline: none;
 }
 
-button:hover, button:focus {
-    background: linear-gradient(90deg, #5f4b8b 0%, #0ff 100%);
-    transform: translateY(-2px) scale(1.04);
-    box-shadow: 0 4px 16px rgba(60, 30, 90, 0.18);
+#btngerador{
+    margin: 32px;
 }
 
-p {
-    margin-top: 32px;
-    font-size: 1.2em;
-    color: #fff;
-    background: rgba(95, 75, 139, 0.12);
-    padding: 12px 18px;
-    border-radius: 8px;
-    word-break: break-all;
-    box-shadow: 0 1px 4px rgba(60, 30, 90, 0.08);
-}
-
-@media (max-width: 600px) {
-    section {
-        width: 98%;
-        padding: 18px 6px 18px 6px;
-        min-height: 320px;
-    }
-    h1 {
-        font-size: 1.5em;
-    }
-    button {
-        width: 100%;
-        font-size: 1em;
-    }
-    p {
-        font-size: 1em;
-        padding: 10px 6px;
-    }
-}
+ #btnCopiar {
+            background-color: transparent;
+            border: 2px solid var(--cor-botao-primario);
+            width: auto;
+            color: var(--cor-texto);
+            padding: 8px 16px;
+            font-size: 0.9em;
+            margin-left: 10px;
+        }

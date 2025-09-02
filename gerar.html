@@ -7,12 +7,20 @@
     <title>Gerador de senha</title>
 </head>
 <body>
-    <section>  
-        <h1>Gere sua senha</h1>
-        <p id="senhagerada"></p>
-        <button onclick="gerarsenha()">Gere sua senha</button>
+    <main >
+        <h1>Gerador de Senha</h1>
+        <div class="gerador">
+            <label for="tamanho-senha">Tamanho da senha:</label>
+            <input type="number" id="tamanho" min="8" max="12" value="12">
+        </div>
         
-        </section>
+        <div class="senha-box">
+            <p id="senhagerada">Clique em gerar senha</p>
+            <button onclick="copiarSenha()" id="btnCopiar" title="Copiar senha">Copiar</button>
+        </div>
+        
+        <button id="btngerador" onclick="gerarsenha()">Gerar Senha</button>
+    </main>
 
     <script src="gerador.js"></script>
 </body>
